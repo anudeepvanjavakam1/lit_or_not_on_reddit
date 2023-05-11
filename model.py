@@ -12,7 +12,6 @@ nltk.downloader.download('vader_lexicon')
 from nltk.sentiment.vader import SentimentIntensityAnalyzer as SIA
 import re # Remove links
 import en_core_web_sm
-import spacy
 
 import os
 from dotenv import load_dotenv
