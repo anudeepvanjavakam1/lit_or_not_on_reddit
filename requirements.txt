@@ -15,5 +15,4 @@ datetime
 google.cloud
 google-api-python-client
 toml
-json
 requests
