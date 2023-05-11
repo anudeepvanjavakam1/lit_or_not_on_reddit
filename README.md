@@ -2,12 +2,14 @@
 
 Many people add "Reddit" to their search queries to find authentic product reviews/feedback and thats why Reddit is the source for this app.
 
-Looking to buy something💰, but not sure if it's dope?👀
-Let my app be your guide💪, it's the ultimate Reddit scope!🔎
-
-No need to waste your money💲, on something that's not legit👎,
-Just use this app to know if it's worth it👌
-
+Looking to buy something💰,
+but not sure if it's dope?👀
+Let my app be your guide💪,
+it's the ultimate Reddit scope!🔎
+No need to waste your money💲,
+on something that's not legit👎,
+Just use this app
+to know if it's worth it👌
 Made with love on streamlit❤,
 To help you find if it's LIT or NOT on REDDIT!🔥
 
