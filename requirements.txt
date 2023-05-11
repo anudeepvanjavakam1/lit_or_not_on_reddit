@@ -12,7 +12,6 @@ plotly
 streamlit
 streamlit_lottie
 datetime
-io
 google.cloud
 google.oauth2
 toml

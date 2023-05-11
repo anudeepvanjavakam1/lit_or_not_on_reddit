@@ -8,7 +8,7 @@ from wordcloud import WordCloud, get_single_color_func
 import matplotlib.pyplot as plt
 
 from datetime import datetime
-from io import BytesIO
+#from io import BytesIO
 
 from google.cloud import firestore
 from google.oauth2 import service_account
