@@ -13,7 +13,7 @@ streamlit
 streamlit_lottie
 datetime
 google.cloud
-google.oauth2
+google-api-python-client
 toml
 json
 requests
