@@ -9,8 +9,10 @@ import matplotlib.pyplot as plt
 from datetime import datetime
 #from io import BytesIO
 
-from google.cloud import firestore
-from google.oauth2 import service_account
+# If we want to store app analytics in db 
+#from google.cloud import firestore 
+#from google.oauth2 import service_account
+
 import toml
 
 import json
