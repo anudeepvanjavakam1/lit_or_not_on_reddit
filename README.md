@@ -1,7 +1,5 @@
 # LIT or NOT on REDDIT
 
-Many people add "Reddit" to their search queries to find authentic product reviews/feedback and thats why Reddit is the source for this app.
-
 Looking to buy something💰,
 but not sure if it's dope?👀
 Let my app be your guide💪,
@@ -13,19 +11,25 @@ to know if it's worth it👌
 Made with love on streamlit❤,
 To help you find if it's LIT or NOT on REDDIT!🔥
 
+## Demo App
+
+[![Streamlit App](<https://static.streamlit.io/badges/streamlit_badge_black_white.svg>)](<https://anudeepvanjavakam1-lit-or-not-on-reddit-app-s0xbqr.streamlit.app/>)
+
+## Project Overview
 
 This app searches reddit posts and comments across many subreddits to determine if it has a positive or negative sentiment based on sentiment intensity analyzer (VADER).
 Text in both original posts and comments is analyzed. If the results did not give you enough information, try phrasing the search term differently and be more specific.
 Feel free to increase no. of posts and no. of comments to get more breadth and depth about what redditors think😉
 
-## Demo App
+## Problem Statement
 
-[![Streamlit App](<https://static.streamlit.io/badges/streamlit_badge_black_white.svg>)](<https://share.streamlit.io/dataprofessor/st-app/>)
+We can all agree researching products, platforms or services is painful and time taking.
 
-## Section Heading
+I often find myself researching multiple sources across numerous chrome tabs to see if something is reliable, worthy, and provides me the value at the best possible price and still feel like I am lost. Information is scattered, hard to find, and hard to sort through (multiple mentions of different products, mixed reviews) and get a clear summary.
 
-This is filler text. Please replace this with the text for this section.
+More over, Misleading ads, SEO spam (best 5 products articles with least research), and fake reviews (Affliated links, sponsored content) can make the whole experience frustrating.
 
+Many people add "Reddit" to their search queries to find authentic product reviews/feedback and thats why Reddit is the source for this app.
 ## Further Reading
 
 This is filler text. Please replace this with explanatory text about further relevant resources for this repo.

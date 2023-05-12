@@ -1,7 +1,6 @@
 import streamlit as st
 import streamlit_analytics
 import pandas as pd
-import numpy as np
 from nltk import FreqDist
 
 from wordcloud import WordCloud, get_single_color_func
