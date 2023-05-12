@@ -187,7 +187,7 @@ if button_input:
         #### end of word cloud ####
         space()
         
-        st.subheader('Top 5 comments across 10 most relevant posts and their upvotes:')
+        st.subheader('Top comments and their upvotes:')
         st.json(top_comments)
 
     # celebratory balloons in order after displaying the results
