@@ -11,6 +11,7 @@ wordcloud
 plotly
 streamlit
 streamlit_lottie
+streamlit_analytics
 datetime
 google.cloud
 google-api-python-client
