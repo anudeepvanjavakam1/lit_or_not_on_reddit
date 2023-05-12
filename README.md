@@ -25,11 +25,15 @@ Feel free to increase no. of posts and no. of comments to get more breadth and d
 
 We can all agree researching products, platforms or services is painful and time taking.
 
-I often find myself researching multiple sources across numerous chrome tabs to see if something is reliable, worthy, and provides me the value at the best possible price and still feel like I am lost. Information is scattered, hard to find, and hard to sort through (multiple mentions of different products, mixed reviews) and get a clear summary.
+I often find myself researching multiple sources across numerous chrome tabs to see if something is reliable, worthy, and reasonable to buy and still feel like I am lost. Information is scattered, hard to find, and hard to sort through (multiple mentions of different products, mixed reviews) and get a clear summary.
 
 More over, Misleading ads, SEO spam (best 5 products articles with least research), and fake reviews (Affliated links, sponsored content) can make the whole experience frustrating.
 
-Many people add "Reddit" to their search queries to find authentic product reviews/feedback and thats why Reddit is the source for this app.
+Reddit is one place where people leave honest reviews and discourage any fake ones.
+With over 52 million daily active users, Reddit provides a platform for people from all walks of life to share their experiences and opinions.  
+
+
+
 ## Further Reading
 
 This is filler text. Please replace this with explanatory text about further relevant resources for this repo.
