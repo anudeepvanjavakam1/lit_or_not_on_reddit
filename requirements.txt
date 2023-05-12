@@ -1,8 +1,7 @@
 praw
 pandas==1.4.4
 nltk==3.8.1
-spacy
-https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.0.0/en_core_web_sm-3.0.0.tar.gz#egg=en_core_web_sm
+en_core_web_sm==3.3.0
 python-dotenv
 seaborn
 matplotlib
@@ -13,5 +12,3 @@ streamlit_lottie
 streamlit_analytics
 datetime
 requests
-typer==0.4.0
-protobuf==3.20.0
