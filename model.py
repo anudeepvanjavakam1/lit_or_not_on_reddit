@@ -4,6 +4,7 @@ from praw.models import MoreComments
 
 import pandas as pd
 import nltk
+nltk.download('wordnet')
 from nltk.corpus import stopwords
 from nltk.tokenize import RegexpTokenizer
 from nltk.stem import WordNetLemmatizer, PorterStemmer
