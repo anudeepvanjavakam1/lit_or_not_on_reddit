@@ -13,5 +13,5 @@ streamlit_lottie
 streamlit_analytics
 datetime
 requests
-typer
-click
+click<7.2.0,>=7.1.1
+protobuf==3.19.5
