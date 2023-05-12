@@ -1,7 +1,8 @@
 praw
 pandas==1.4.4
 nltk==3.8.1
-en_core_web_sm
+spacy>=3.0.0,<4.0.0
+en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.4.0/en_core_web_sm-3.4.0-py3-none-any.whl
 python-dotenv
 seaborn
 matplotlib
