@@ -1,7 +1,7 @@
 praw
 pandas==1.4.4
 nltk==3.8.1
-en_core_web_sm==3.3.0
+en_core_web_sm
 python-dotenv
 seaborn
 matplotlib
