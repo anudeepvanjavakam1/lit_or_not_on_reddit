@@ -12,5 +12,6 @@ streamlit
 streamlit_lottie
 streamlit_analytics
 datetime
-toml
 requests
+typer==0.4.0
+click==7.1.2

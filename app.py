@@ -13,9 +13,6 @@ from datetime import datetime
 #from google.cloud import firestore 
 #from google.oauth2 import service_account
 
-import toml
-
-import json
 import requests
 from streamlit_lottie import st_lottie
 from streamlit_lottie import st_lottie_spinner
