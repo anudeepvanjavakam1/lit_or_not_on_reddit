@@ -13,3 +13,4 @@ streamlit_lottie
 streamlit_analytics
 datetime
 requests
+protobuf>=3.19.5
