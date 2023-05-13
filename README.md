@@ -1,19 +1,19 @@
 # LIT or NOT on REDDIT
 
-Looking to buy something💰,
-but not sure if it's dope?👀
-Let my app be your guide💪,
-it's the ultimate Reddit scope!🔎
-No need to waste your money💲,
-on something that's not legit👎,
-Just use this app
-to know if it's worth it👌
-Made with love on streamlit❤,
+Looking to buy something💰, <br />
+but not sure if it's dope?👀 <br />
+Let my app be your guide💪, <br />
+it's the ultimate Reddit scope!🔎 <br />
+No need to waste your money💲, <br />
+on something that's not legit👎, <br />
+Just use this app <br />
+to know if it's worth it👌 <br />
+Made with love on streamlit❤, <br />
 To help you find if it's LIT or NOT on REDDIT!🔥
 
 ## Demo App
 
-[![Streamlit App](<https://static.streamlit.io/badges/streamlit_badge_black_white.svg>)](<https://anudeepvanjavakam1-lit-or-not-on-reddit-app-s0xbqr.streamlit.app/>)
+[![Streamlit App](<https://static.streamlit.io/badges/streamlit_badge_black_white.svg>)](<https://anudeepvanjavakam1-lit-or-not-on-reddit-app-krji2w.streamlit.app/>)
 
 ## Project Overview
 
