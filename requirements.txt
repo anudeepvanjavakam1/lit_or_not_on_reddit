@@ -10,6 +10,5 @@ wordcloud
 plotly
 streamlit
 streamlit_lottie
-streamlit_analytics
 datetime
 requests

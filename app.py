@@ -1,5 +1,5 @@
 import streamlit as st
-import streamlit_analytics
+#import streamlit_analytics
 import pandas as pd
 from nltk import FreqDist
 
@@ -65,7 +65,7 @@ To help you find if it's LIT or NOT on REDDIT!🔥\n
 """)
 
 # counts page views, tracks all widget interactions across users
-streamlit_analytics.start_tracking() # add ?analytics=on at the end of the app url to see app analytics
+#streamlit_analytics.start_tracking() # add ?analytics=on at the end of the app url to see app analytics
 
 ## USER INPUTS ##
 st.sidebar.markdown("**Select how many posts & comments you want the app to scrape:** 👇")
@@ -200,4 +200,4 @@ st.info("""
         """)
 
 #  counts page views, tracks all widget interactions across users
-streamlit_analytics.stop_tracking()        
+#streamlit_analytics.stop_tracking()        
