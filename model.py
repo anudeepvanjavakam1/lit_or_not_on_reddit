@@ -37,7 +37,7 @@ reddit = praw.Reddit(client_id = os.getenv("CLIENT_ID"),
 subreddit = reddit.subreddit('all')
 
 # function to get comments from reddit posts
-def get_comments(search_term, no_of_posts = 10, no_of_comments = 20, no_of_top_comments = 5):
+""" def get_comments(search_term, no_of_posts = 10, no_of_comments = 20, no_of_top_comments = 5):
 
     posts = dict()
     all_comments = []
@@ -84,6 +84,50 @@ def get_comments(search_term, no_of_posts = 10, no_of_comments = 20, no_of_top_c
         comments_body.append(comment.body)
 
     # adding original post text
+    for text in posts.values():
+        comments_body.append(text)
+
+    return comments_body, top_comments_body, len(posts), len(all_comments) """
+
+def get_comments(search_term, no_of_posts=10, no_of_comments=20, no_of_top_comments=5, include_replies = False):
+
+    posts = {}
+    all_comments = []
+    top_comments_body = {}
+
+    # Search all subreddits and get comments from top posts
+    for submission in subreddit.search(search_term, limit=no_of_posts, sort='relevance'):
+        # Get comments from each submission
+        submission.comments.replace_more(limit=None)
+
+        if include_replies:
+            comments = submission.comments.list()
+        else:
+            comments = submission.comments
+
+        # Exclude stickied posts
+        if not submission.stickied:
+            posts[submission.id] = submission.selftext
+            all_comments += comments
+
+        # If the number of comments exceeds user input, stop searching
+        if len(all_comments) >= no_of_comments:
+            break
+
+    # Sort all comments by number of upvotes
+    all_comments.sort(key=lambda comment: comment.score, reverse=True)
+
+    # Store top n comments with most upvotes
+    top_comments = all_comments[:no_of_top_comments]
+
+    # Store top comments body
+    for comment in top_comments:
+        top_comments_body[comment.body] = comment.score
+
+    # Store all comments body
+    comments_body = [comment.body for comment in all_comments]
+
+    # Add original post text to comments body
     for text in posts.values():
         comments_body.append(text)
 

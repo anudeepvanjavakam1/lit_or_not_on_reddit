@@ -80,6 +80,10 @@ no_of_comments = st.sidebar.slider(label = "No. of comments to scrape", min_valu
 no_of_top_comments = st.sidebar.slider(label = "No. of top comments to display", min_value=1, max_value=20, value=5, step=1, format=None,
                   key=None, help="App displays Top comments and their upvotes at the bottom of the page", on_change=None, label_visibility="visible")
 
+replies_check = st.sidebar.checkbox(label = "Include replies", value=False,
+                            help="Replies are not taken into consideration if this is not checked and only top-level comments are analyzed. Looping through multiple posts and comments and their nested replies is computationally expensive but results may be more accurate",
+                            )
+
 search_term = st.sidebar.text_input("**Enter your search term below**👇", placeholder="👉Enter here...") 
 
 button_input = st.sidebar.button("**🔥Click me to find out if its Lit🔥**", type="primary") ## button
@@ -91,7 +95,7 @@ if button_input:
     with st_lottie_spinner(lottie_download, speed=1, height=200, key="download"):
 
         # get best comments from top reddit posts
-        comments, top_comments, no_of_posts, no_of_comments = model.get_comments(search_term = search_term, no_of_posts=no_of_posts, no_of_comments=no_of_comments, no_of_top_comments=no_of_top_comments)
+        comments, top_comments, no_of_posts, no_of_comments = model.get_comments(search_term = search_term, no_of_posts=no_of_posts, no_of_comments=no_of_comments, no_of_top_comments=no_of_top_comments, include_replies=replies_check)
 
         if no_of_posts == 0:
             st.warning("No posts found! Please enter another search term", icon= "⚠️")
