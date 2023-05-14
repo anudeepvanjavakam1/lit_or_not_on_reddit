@@ -1,5 +1,4 @@
 import streamlit as st
-#import streamlit_analytics
 import pandas as pd
 from nltk import FreqDist
 
@@ -7,7 +6,6 @@ from wordcloud import WordCloud, get_single_color_func
 import matplotlib.pyplot as plt
 
 from datetime import datetime
-#from io import BytesIO
 
 # If we want to store app analytics in db 
 #from google.cloud import firestore 
@@ -174,7 +172,7 @@ if button_input:
         
         # st.pyplot without these columns would just display the image to fit 100% of the entire column width, hence stretching it.
         # as a workaround, columns can be used to display the plot unstretched 
-        col1, col2, col3, col4, col5= st.columns([1, 1, 2, 1, 1])
+        col1, col2, col3, col4, col5= st.columns([1, 1, 3, 1, 1])
         with col3:
             st.markdown('**Word cloud to display :green[positive], :red[negative] and neutral words**')               
             plt.subplots(figsize=(5, 4))
@@ -182,11 +180,6 @@ if button_input:
             plt.imshow(wc, interpolation='bilinear')        
             plt.axis('off')            
             st.pyplot(plt)
-        
-        # workaround is saving the plot temporarily and getting it with st.image but it quite doesn't look right
-        #buf = BytesIO()
-        #plt.savefig(buf, format="png")
-        #st.image(buf)
 
         #### end of word cloud ####
         space()

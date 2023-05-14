@@ -11,7 +11,7 @@ to know if it's worth it👌 <br />
 Made with love on streamlit❤, <br />
 To help you find if it's LIT or NOT on REDDIT!🔥
 
-## Demo App
+## App
 
 [![Streamlit App](<https://static.streamlit.io/badges/streamlit_badge_black_white.svg>)](<https://anudeepvanjavakam1-lit-or-not-on-reddit-app-krji2w.streamlit.app/>)
 
@@ -65,6 +65,7 @@ User choices:
 - No. of comments to scrape: More comments take longer time for results. If the no. of comments scraped reaches this limit, then no more posts are scraped regardless of your choice for no. of posts
 - No. of top comments to display: App displays Top comments and their upvotes at the bottom of the page. Comments are sorted by no. of upvotes on reddit.
 - Search term (ex: is xxx product worth it? is __ subscription worth it? product/platform/service reviews)
+- Include replies: option to include replies. This may take longer for results. It is set to False by default.
 
 After clicking the button 'Click me to find out if its Lit' button, app displays the following:
 - Percentage of positive or negative sentiment depending on whether the overall percentage of positive words is greater than or less than that of negative words
