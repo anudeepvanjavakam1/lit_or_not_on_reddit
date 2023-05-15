@@ -23,6 +23,10 @@ Text in both original posts and comments is analyzed.
 If the results did not give you enough information, try phrasing the search term differently and be more specific.
 Feel free to increase no. of posts and no. of comments to get more breadth and depth about what redditors think😉
 
+## Blog post
+
+https://medium.com/@anudeepvanjavakam/unlock-the-power-of-reddit-find-out-if-that-product-you-want-to-buy-is-worth-it-with-this-914593998bdf
+
 ## Libraries
 praw
 pandas==1.4.4
@@ -52,7 +56,7 @@ We can all agree researching products, platforms or services is painful and time
 
 I often find myself researching multiple sources across numerous chrome tabs to see if something is reliable, worthy, and reasonable to buy and still feel like I am lost. Information is scattered, hard to find, and hard to sort through (multiple mentions of different products, mixed reviews) and get a clear summary.
 
-More over, Misleading ads, SEO spam (best 5 products articles with least research), and fake reviews (Affliated links, sponsored content) can make the whole experience frustrating.
+Moreover, Misleading ads, SEO spam (best 5 product articles with the least research), and fake reviews (Affiliated links, sponsored content) can make the whole experience frustrating. Reddit is one place where people leave honest reviews and discourage any fake ones.
 
 Reddit is one place where people leave honest reviews and discourage any fake ones.
 With over 52 million daily active users, Reddit provides a platform for people from all walks of life to share their experiences and opinions.
