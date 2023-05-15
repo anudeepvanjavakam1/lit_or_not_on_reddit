@@ -28,27 +28,28 @@ Feel free to increase no. of posts and no. of comments to get more breadth and d
 https://medium.com/@anudeepvanjavakam/unlock-the-power-of-reddit-find-out-if-that-product-you-want-to-buy-is-worth-it-with-this-914593998bdf
 
 ## Libraries
-praw
-pandas==1.4.4
-nltk==3.8.1
-spacy>=3.0.0,<4.0.0
-en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.4.0/en_core_web_sm-3.4.0-py3-none-any.whl
-python-dotenv
-seaborn
-matplotlib
-wordcloud
-plotly
-streamlit
-streamlit_lottie
-datetime
-requests
+praw <br />
+pandas==1.4.4 <br />
+nltk==3.8.1 <br />
+spacy>=3.0.0,<4.0.0 <br />
+en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.4.0/en_core_web_sm-3.4.0-py3-none-any.whl <br />
+python-dotenv <br />
+seaborn <br />
+matplotlib <br />
+wordcloud <br />
+plotly <br />
+streamlit <br />
+streamlit_lottie <br />
+datetime <br />
+requests <br />
 
 ## Files
 
-requirements.txt - all package requirements
-model.py - Helper functions for fetching reddit comments, pre-processing, applying sentiment analysis, and generating plots
-app.py - code for streamlit app
-set_up_notebook.ipynb - a notebook for exploring reddit comments,
+- requirements.txt - all package requirements
+- model.py - Helper functions for fetching reddit comments, pre-processing, applying sentiment analysis, and generating plots
+- app.py - code for streamlit app
+- set_up_notebook.ipynb - a notebook for exploring different components of the app
+- demo-2-streamlit-app-2023-05-11-14-05-61.webm - a short clip for app demo
 
 ## Problem Statement
 
