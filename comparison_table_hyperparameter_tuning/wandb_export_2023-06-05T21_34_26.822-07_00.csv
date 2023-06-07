@@ -1,0 +1,19 @@
+Name,eval/accuracy,eval/f1,eval/loss,eval/precision,eval/recall,train_batch_size,eval_batch_size,batch_size,eval_steps,evaluation_strategy,learning_rate,Runtime,Sweep
+floral-sweep-3 (chosen model),95%,48%,32%,58%,41%,8,8,,500,steps,5.63098E-05,3036,ile8sxcl
+zesty-sweep-6,95%,48%,39%,56%,42%,4,8,,500,steps,3.73012E-05,6402,ile8sxcl
+colorful-sweep-2,95%,47%,33%,60%,39%,16,8,,500,steps,6.74987E-05,3041,ile8sxcl
+gentle-sweep-1,95%,48%,26%,54%,43%,64,8,,500,steps,6.18709E-05,2155,ile8sxcl
+kind-sweep-5,95%,47%,26%,58%,40%,32,8,,500,steps,4.69539E-05,1667,ile8sxcl
+pleasant-sweep-8,95%,45%,35%,60%,36%,4,8,,500,steps,7.38967E-05,3166,ile8sxcl
+celestial-sweep-7,95%,45%,25%,54%,38%,64,8,,500,steps,6.70824E-05,1214,ile8sxcl
+drawn-sweep-9,95%,44%,24%,56%,36%,8,16,8,None,epoch,4.73866E-05,835,wx2o1mj0
+pleasant-sweep-1,94%,44%,25%,57%,35%,8,16,8,None,epoch,3.02184E-05,855,wx2o1mj0
+crimson-sweep-2,94%,30%,29%,44%,23%,8,16,8,None,epoch,1.08638E-05,834,wx2o1mj0
+twilight-sweep-4,94%,31%,29%,41%,25%,64,8,,500,steps,8.26212E-06,2670,ile8sxcl
+amber-sweep-1,93%,0%,35%,0%,0%,16,8,,60,steps,2.64636E-06,1908,e2bagj2t
+peachy-sweep-4,93%,0%,43%,0%,0%,64,16,64,None,epoch,1.369E-05,659,wx2o1mj0
+proud-sweep-6,93%,0%,41%,0%,0%,64,16,64,None,epoch,2.12459E-05,660,wx2o1mj0
+royal-sweep-8,93%,0%,44%,0%,0%,64,16,64,None,epoch,1.27024E-05,656,wx2o1mj0
+devout-sweep-3,93%,0%,41%,0%,0%,64,16,64,None,epoch,2.23089E-05,650,wx2o1mj0
+blooming-sweep-5,93%,0%,40%,0%,0%,64,16,64,None,epoch,2.48709E-05,670,wx2o1mj0
+frosty-sweep-7,93%,0%,39%,0%,0%,64,16,64,None,epoch,2.6185E-05,663,wx2o1mj0
