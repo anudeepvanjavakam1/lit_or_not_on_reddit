@@ -1,5 +1,4 @@
 praw
-pandas==1.4.4
 nltk==3.8.1
 spacy>=3.0.0,<4.0.0
 en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.4.0/en_core_web_sm-3.4.0-py3-none-any.whl
@@ -8,7 +7,19 @@ seaborn
 matplotlib
 wordcloud
 plotly
-streamlit
 streamlit_lottie
 datetime
 requests
+pytorch-lightning==2.0
+torch==1.13.0
+torchtext==0.14.0
+torchvision
+torchmetrics>=0.7.0
+datasets==2.3.2
+pandas
+streamlit
+transformers==4.28.0
+datasets
+evaluate
+seqeval
+promptify==0.1.4

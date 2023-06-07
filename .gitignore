@@ -3,3 +3,9 @@ key-to-toml.py
 firestore-key.json
 secrets.toml
 .env
+log_results
+tmp_trainer
+wandb
+reddit_product_tagging-sweeps
+data
+todo.txt
