@@ -66,10 +66,13 @@ with st.sidebar:
 st.title('🔥Lit or Not on Reddit🔥')
 st.caption('Streamlit App by [Anudeep](https://www.linkedin.com/in/anudeepvanjavakam/)')
 
-st.write('Have you wondered 👀 if a product/platform/service is worth it or find yourself going through endless reddit posts for authentic reviews and which products are loved the most?')
+st.write('Have you wondered 👀 if a product/platform/service is worth it or found yourself going through endless reddit posts for authentic reviews and products loved by most?')
 
+listTabs = ["See products mentioned by Redditors (NER, token classification) 💬","See if a product/service is worth it (Sentiment Analysis) 👍👎"]
 # create tabs
-tab1, tab2 = st.tabs(["See if a product/service is worth it (Sentiment Analysis) 👍👎", "See products mentioned by Redditors (NER, token classification) 💬"])
+#tab2, tab1 = st.tabs(listTabs)
+whitespace = 70
+tab2, tab1 = st.tabs([s.center(whitespace,"\u2001") for s in listTabs])
 
 # counts page views, tracks all widget interactions across users
 #streamlit_analytics.start_tracking() # add ?analytics=on at the end of the app url to see app analytics
@@ -77,11 +80,11 @@ tab1, tab2 = st.tabs(["See if a product/service is worth it (Sentiment Analysis)
 ## USER INPUTS ##
 st.sidebar.markdown("**Select how many posts & comments you want the app to scrape:** 👇")
 
-no_of_posts = st.sidebar.slider(label = "No. of reddit posts to scrape", min_value=1, max_value=20, value=10, step=1, format=None,
+no_of_posts = st.sidebar.slider(label = "No. of reddit posts to scrape", min_value=1, max_value=20, value=5, step=1, format=None,
                   key=None, help='More posts take longer time for results. Ex: "10" gets 10 most relevant posts for the search term. If the no. of posts scraped reaches this limit, then no more comments are scraped regardless of your choice for no. of comments', on_change=None, label_visibility="visible")
 
 
-no_of_comments = st.sidebar.slider(label = "No. of comments to scrape", min_value=1, max_value=500, value=100, step=1, format=None,
+no_of_comments = st.sidebar.slider(label = "No. of comments to scrape", min_value=1, max_value=500, value=50, step=1, format=None,
                   key=None, help='More comments take longer time for results. If the no. of comments scraped reaches this limit, then no more posts are scraped regardless of your choice for no. of posts', on_change=None, label_visibility="visible")
 
 no_of_top_comments = st.sidebar.slider(label = "No. of top comments to display", min_value=1, max_value=20, value=5, step=1, format=None,
@@ -104,12 +107,13 @@ with st.sidebar:
 css = '''
 <style>
     .stTabs [data-baseweb="tab-list"] button [data-testid="stMarkdownContainer"] p {
-    font-size:1rem;
+    font-size:1.25rem;
     }
 </style>
 '''
 
 st.markdown(css, unsafe_allow_html=True)
+
 
 
 if button_input:
