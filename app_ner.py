@@ -100,6 +100,18 @@ button_input = st.sidebar.button("**🔥Click me to find out if its Lit🔥**", 
 with st.sidebar:
     st.info('For example, type "regal unlimited susbcription" or "Saatva Classic mattress reviews"🛌 or "Best 4k Tv to buy" and click the button above')
 
+# increasing font size of tabs with custom css
+css = '''
+<style>
+    .stTabs [data-baseweb="tab-list"] button [data-testid="stMarkdownContainer"] p {
+    font-size:2rem;
+    }
+</style>
+'''
+
+st.markdown(css, unsafe_allow_html=True)
+
+
 if button_input:
     with st_lottie_spinner(lottie_download, speed=1, height=200, key="download"):
 
