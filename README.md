@@ -13,12 +13,11 @@ To help you find if it's LIT or NOT on REDDIT!🔥
 
 ## App
 
-[![Streamlit App](<https://static.streamlit.io/badges/streamlit_badge_black_white.svg>)](<https://anudeepvanjavakam1-lit-or-not-on-reddit-app-krji2w.streamlit.app/>)
+[![Streamlit App](<https://static.streamlit.io/badges/streamlit_badge_black_white.svg>)](<https://anudeepvanjavakam1-lit-or-not-on-reddit-app-ner-ivuokc.streamlit.app/>)
 
 ## Project Overview
 
-This app searches reddit posts and comments across many subreddits to determine if it has a positive or negative sentiment based on sentiment intensity analyzer (VADER).
-Text in both original posts and comments is analyzed.
+This app searches reddit posts and comments across many subreddits to determine if a product/service has a positive or negative sentiment and predicts top product mentions using Named Entity Recognition.
 
 If the results did not give you enough information, try phrasing the search term differently and be more specific.
 Feel free to increase no. of posts and no. of comments to get more breadth and depth about what redditors think😉
@@ -29,7 +28,7 @@ https://medium.com/@anudeepvanjavakam/unlock-the-power-of-reddit-find-out-if-tha
 
 ## Libraries
 praw <br />
-pandas==1.4.4 <br />
+pandas <br />
 nltk==3.8.1 <br />
 spacy>=3.0.0,<4.0.0 <br />
 en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.4.0/en_core_web_sm-3.4.0-py3-none-any.whl <br />
@@ -42,13 +41,37 @@ streamlit <br />
 streamlit_lottie <br />
 datetime <br />
 requests <br />
+pytorch-lightning==2.0 <br />
+torch==1.13.0 <br />
+torchtext==0.14.0 <br />
+torchvision <br />
+torchmetrics>=0.7.0 <br />
+datasets==2.3.2 <br />
+transformers==4.28.0 <br />
+datasets <br />
+evaluate <br />
+seqeval <br />
+promptify==0.1.4 <br />
+markupsafe==2.0.1 <br />
+jinja2==2.11.3 <br />
 
 ## Files
 
+
 - requirements.txt - all package requirements
-- model.py - Helper functions for fetching reddit comments, pre-processing, applying sentiment analysis, and generating plots
-- app.py - code for streamlit app
-- set_up_notebook.ipynb - a notebook for exploring different components of the app
+
+- app_ner.py - code for streamlit app with both sentiment analysis and named entity recognition features
+
+- utils.py - Helper functions for fetching reddit comments, pre-processing, applying sentiment analysis, generating plots and for inference of the hugging face model (only needed for app_ner.py)
+
+- model.py - Helper functions for fetching reddit comments, pre-processing, applying sentiment analysis, and generating plots (only needed for app.py)
+
+- app.py - code for streamlit app with only sentiment analysis feature
+
+- set_up_notebook.ipynb - a notebook for exploring sentiment analysis of reddit comments
+
+- explore_data_and_model.ipynb - a deep dive into the end-to-end model building process. Gives overview, explores data, discusses strategy and expected solution, metrics, EDA, data pre-processing, modeling, tuning, results, comparison table, conclusion, ideas for improvement, and Acknowledgement 
+
 - demo-2-streamlit-app-2023-05-11-14-05-61.webm - a short clip for app demo
 
 ## Problem Statement
@@ -62,7 +85,7 @@ Moreover, Misleading ads, SEO spam (best 5 product articles with the least resea
 Reddit is one place where people leave honest reviews and discourage any fake ones.
 With over 52 million daily active users, Reddit provides a platform for people from all walks of life to share their experiences and opinions.
 
-This app takes in user's input and searches posts (sorted by relevancy) and comments across subreddits to analyze sentiment. 
+This app searches posts (sorted by relevancy) and comments (sorted by upvotes) across subreddits to analyze sentiment and predict top product mentions. 
 ## Features
 
 User choices:
@@ -70,7 +93,7 @@ User choices:
 - No. of comments to scrape: More comments take longer time for results. If the no. of comments scraped reaches this limit, then no more posts are scraped regardless of your choice for no. of posts
 - No. of top comments to display: App displays Top comments and their upvotes at the bottom of the page. Comments are sorted by no. of upvotes on reddit.
 - Search term (ex: is xxx product worth it? is __ subscription worth it? product/platform/service reviews)
-- Include replies: option to include replies. This may take longer for results. It is set to False by default.
+- Include replies: option to include replies. Checking this box may increase repsonse time for results. It is set to False by default.
 
 After clicking the button 'Click me to find out if its Lit' button, app displays the following:
 - Percentage of positive or negative sentiment depending on whether the overall percentage of positive words is greater than or less than that of negative words
@@ -81,7 +104,8 @@ After clicking the button 'Click me to find out if its Lit' button, app displays
 - A bar graph of commonly used negative words and their counts
 - A bar graph of percentage of positive and negative words
 - A word cloud showing positive (green), negative (red) and neutral (grey) words
-- Top 5 comments (sorted by no. of upvotes on reddit) and their upvotes
+- Top comments and their upvotes
+- Top product mentions (predicted by the token classification model)
 
 Text in both original posts and comments is analyzed. If the results did not give you enough information, try phrasing the search term differently and be more specific. Feel free to increase no. of posts and no. of comments to get more breadth and depth about what redditors think.
 
@@ -91,7 +115,14 @@ Sentiment analysis is the process of extracting subjective information from text
 
 The best algorithm for analyzing the sentiment of reviews depends on the specific task and data being analyzed. In general, machine learning-based approaches (Naive Bayes, Support Vector Machines (SVM), and Recurrent Neural Networks (RNNs)) tend to perform well on sentiment analysis tasks, especially when trained on large amounts of data. However, lexicon-based approaches can also be effective when dealing with specific domains or languages, particularly for social media opinions and reviews which is what this app focuses on.
 
-Lexicon-based approach: This approach uses pre-defined dictionaries of words that are classified with positive or negative sentiment scores. The algorithm then assigns a score to a given text by summing up the scores of all the words in the text. A popular example of this approach is the VADER (Valence Aware Dictionary and sEntiment Reasoner) algorithm, which uses a combination of rule-based and statistical techniques to analyze the sentiment of social media text.
+Lexicon-based approach: This approach uses pre-defined dictionaries of words that are classified with positive or negative sentiment scores. The algorithm then assigns a score to a given text by summing up the scores of all the words in the text. A popular example of this approach is the VADER (Valence Aware Dictionary and sentiment Reasoner) algorithm, which uses a combination of rule-based and statistical techniques to analyze the sentiment of social media text.
+
+Named Entity Recognition:
+
+Token classification assigns a label to individual tokens in a sentence. One of the most common token classification tasks is Named Entity Recognition (NER). NER attempts to find a label for each entity in a sentence, such as a person, location, or organization.
+
+A pre-trained model DistilBERT (Hugging Face) is finetuned with WNUT17 dataset to detect new entities. This finetuned model is used for inference in the app.
+Check out explore_data_and_model.ipynb notebook for more details.
 
 ## Why VADER?
 
@@ -105,8 +136,13 @@ VADER (Valence Aware Dictionary and sEntiment Reasoner) is a rule-based sentimen
 
 Overall, VADER's combination of specialized social media language handling, nuanced sentiment analysis, and open-source accessibility make it a strong choice for analyzing the sentiment of Reddit comments.
 
+## Why DistilBERT?
+
+Distilbert aims to optimize the training by reducing the size of BERT and increase the speed of BERT — all while trying to retain as much performance as possible. Specifically, Distilbert is 40% smaller than the original BERT-base model, is 60% faster than it, and retains 97% of its functionality.
+
 ## How does it work?
 
+Sentiment Analysis:
 -   Preprocessing: The first step is to preprocess the text by removing any noise, such as stop words, punctuations, and special characters. The remaining words are then converted to lowercase to make the analysis case-insensitive.
 
 -   Scoring: The SentimentIntensityAnalyzer then scores each word in the text using a sentiment lexicon, which contains a list of words and their associated polarity scores (positive, negative, or neutral). The lexicon used by VADER is specifically designed to handle sentiment in social media contexts like Twitter and Reddit, and it contains over 7,500 lexical features.
@@ -117,6 +153,19 @@ Overall, VADER's combination of specialized social media language handling, nuan
 
 -   Aggregation: Finally, VADER aggregates the scores for each word in the text to produce an overall sentiment score between -1 (extremely negative) and 1 (extremely positive).
 
+Named-Entity-Recognition:
+- First, a pre-trained model is loaded from the Hugging Face.
+    Encoder	models such as ALBERT, BERT, DistilBERT, ELECTRA, RoBERTa can be used for NER (also called token-classification).
+    These models are really large. I chose DistilBERT for it's faster training while meeting the functionality and objectives of the project.
+
+- This model is fine tuned with wnut dataset in order to predict product entities.
+
+- Evaluate the model performance on test dataset based on accuracy (why this metric was chosen is explained in the notebook).
+
+- Test with a few example comments from reddit.
+
+- Push the model to Hugging Face hub so it can be used by the streamlit app for inference.
+
 ## Limitations
 
 - Lack of context: The VADER algorithm analyzes sentiment based on individual words and phrases, without considering the context in which they are used. This can lead to inaccurate results if the sentiment of a word changes depending on its context.
@@ -124,6 +173,10 @@ Overall, VADER's combination of specialized social media language handling, nuan
 - Inability to detect sarcasm and irony: VADER's algorithm is not designed to detect sarcasm or irony, which can be prevalent in Reddit comments. This can lead to misinterpretations of sentiment.
 
 - Language limitations: VADER's algorithm is designed for English language sentiment analysis, which means that it may not work as well for other languages or for comments with mixed languages.
+
+- A low F1 score but high accuracy is observed. when it comes to the F1 score, which is a measure of the balance between precision and recall, DistilBERT may sometimes show slightly lower performance compared to the larger BERT model or other more complex models. This is because DistilBERT sacrifices some model capacity to achieve faster inference times and a smaller model size. Consequently, it may have slightly lower precision or recall compared to larger models, leading to a lower F1 score in some cases.
+
+- Class imbalance: The dataset is imbalanced, meaning one class has significantly more samples than the other, the model might have a high accuracy by predicting the majority class correctly most of the time. However, it may struggle with the minority class, resulting in lower recall and F1 score for that class.
 
 ## Improvement considerations
 
@@ -143,6 +196,20 @@ Overall, VADER's combination of specialized social media language handling, nuan
 
 - GCP for faster computation:
 Looping through multiple posts and comments and their nested replies is computationally expensive even with praw (Python Reddit API wrapper). Can use gcp for faster results.
+
+- Examine the data and check how many examples have each tags/token. Model needs more product labels to be trained on.
+
+- Cross-validation (with a stratified split since classes aren’t balanced) may help mitigate some of the problems that come from doing a train/test split with small datasets.
+
+- Class imbalance: there is a class imbalance (model may predict the majority class “O” majority of the time) and needs to be addressed by employing techniques like oversampling the minority class, undersampling the majority class, or using class weighting.
+
+- Consider other evaluation metrics.
+
+- Fine-tuning with more reddit comments labelled with product entities can help the model learn better representations and improve its performance on the task at hand.
+
+- Some functions may be moved to the app script so that they can take advantage of the streamlit cache ability resulting in faster app response time.
+
+- Predicting products can be done with promptify package as shown in the notebook.This does not need a hugging face model and uses chat gpt to predict products and incurs costs based on app usage.
 
 ## References
 
