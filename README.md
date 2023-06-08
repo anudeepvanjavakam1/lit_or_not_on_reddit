@@ -62,7 +62,7 @@ jinja2==2.11.3 <br />
 
 - app_ner.py - code for streamlit app with both sentiment analysis and named entity recognition features
 
-- utils.py - Helper functions for fetching reddit comments, pre-processing, applying sentiment analysis, generating plots and for inference of the hugging face model (only needed for app_ner.py)
+- util.py - Helper functions for fetching reddit comments, pre-processing, applying sentiment analysis, generating plots and for inference of the hugging face model (only needed for app_ner.py)
 
 - model.py - Helper functions for fetching reddit comments, pre-processing, applying sentiment analysis, and generating plots (only needed for app.py)
 
