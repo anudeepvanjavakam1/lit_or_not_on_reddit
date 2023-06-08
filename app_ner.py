@@ -252,7 +252,7 @@ if button_input:
                     pd.options.display.float_format = '{:.2f}'.format
 
                     # style probabilities with gradient coloring 
-                    st.dataframe(product_tokens_df.style.background_gradient(subset=['probability']))
+                    st.dataframe(product_tokens_df) #.style.background_gradient(subset=['probability'])
 
     # celebratory balloons in order after displaying the results
     st.balloons()
