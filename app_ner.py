@@ -69,7 +69,7 @@ st.caption('Streamlit App by [Anudeep](https://www.linkedin.com/in/anudeepvanjav
 st.write('Have you wondered 👀 if a product/platform/service is worth it or find yourself going through endless reddit posts for authentic reviews and which products are loved the most?')
 
 # create tabs
-tab1, tab2 = st.tabs(["See if something is worth it (Sentiment Analysis) 👍👎", "See products mentioned by Redditors (NER, token classification) 💬"])
+tab1, tab2 = st.tabs(["See if a product/service is worth it (Sentiment Analysis) 👍👎", "See products mentioned by Redditors (NER, token classification) 💬"])
 
 # counts page views, tracks all widget interactions across users
 #streamlit_analytics.start_tracking() # add ?analytics=on at the end of the app url to see app analytics
@@ -104,7 +104,7 @@ with st.sidebar:
 css = '''
 <style>
     .stTabs [data-baseweb="tab-list"] button [data-testid="stMarkdownContainer"] p {
-    font-size:2rem;
+    font-size:1rem;
     }
 </style>
 '''
