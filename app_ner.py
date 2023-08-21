@@ -142,12 +142,11 @@ if button_input:
     #st.session_state.sidebar_state = 'collapsed' #if st.session_state.sidebar_state == 'expanded' else 'expanded'
 
     with st_lottie_spinner(lottie_download, speed=1, height=200, key="download"):
-
+        
+        # get best comments from top reddit posts
+        comments, top_comments, no_of_posts, no_of_comments = util.get_comments(search_term = search_term, no_of_posts=no_of_posts, no_of_comments=no_of_comments, no_of_top_comments=no_of_top_comments, include_replies=replies_check)
         # sentiment analysis tab
-        if problem_choice == "Find if the product is worth it":
-
-            # get best comments from top reddit posts
-            comments, top_comments, no_of_posts, no_of_comments = util.get_comments(search_term = search_term, no_of_posts=no_of_posts, no_of_comments=no_of_comments, no_of_top_comments=no_of_top_comments, include_replies=replies_check)
+        if problem_choice == "Find if the product is worth it":            
 
             if no_of_posts == 0:
                 st.warning("No posts found! Please enter another search term", icon= "⚠️")
@@ -249,8 +248,6 @@ if button_input:
         # Named Entity Recognition (token-classification) tab for tagging products
         if problem_choice == "Find best products":
         #with tab2:
-            # get best comments from top reddit posts
-            comments, top_comments, no_of_posts, no_of_comments = util.get_comments(search_term = search_term, no_of_posts=no_of_posts, no_of_comments=no_of_comments, no_of_top_comments=no_of_top_comments, include_replies=replies_check)
 
             if len(comments)==0:
                 st.error('No comments found.')
