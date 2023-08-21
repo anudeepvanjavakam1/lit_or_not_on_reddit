@@ -21,11 +21,11 @@ from transformers import AutoTokenizer, AutoModelForTokenClassification, Trainer
 import re
 
 # Initialize a session state variable that tracks the sidebar state (either 'expanded' or 'collapsed').
-if 'sidebar_state' not in st.session_state:
-    st.session_state.sidebar_state = 'expanded'
+#if 'sidebar_state' not in st.session_state:
+#    st.session_state.sidebar_state = 'expanded'
 
 # setting a wide layout
-st.set_page_config(layout="wide", page_icon="🔥", page_title="LIT OR NOT", initial_sidebar_state=st.session_state.sidebar_state)
+st.set_page_config(layout="wide", page_icon="🔥", page_title="LIT OR NOT", initial_sidebar_state="expanded")
 
 # decorator to cache model etc. allow_output_mutation for treating model as an immutable object - a singleton 
 @st.cache_resource # 👈 Add the caching decorator
@@ -123,7 +123,7 @@ st.markdown(css, unsafe_allow_html=True)
 if button_input:
     
     # After the button is clicked, close the side bar
-    st.session_state.sidebar_state = 'collapsed' #if st.session_state.sidebar_state == 'expanded' else 'expanded'
+    #st.session_state.sidebar_state = 'collapsed' #if st.session_state.sidebar_state == 'expanded' else 'expanded'
 
     with st_lottie_spinner(lottie_download, speed=1, height=200, key="download"):
 
