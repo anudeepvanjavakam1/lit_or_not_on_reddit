@@ -103,6 +103,10 @@ no_of_top_comments = st.sidebar.slider(label = "No. of top comments to display",
 replies_check = st.sidebar.checkbox(label = "Include replies", value=False,
                             help="Replies are not taken into consideration if this is not checked and only top-level comments are analyzed. Looping through multiple posts and comments and their nested replies is computationally expensive but results may be more accurate",
                             )
+problem_choice = st.sidebar.radio(
+    label = "Choose one:",
+    options = ('Find best products', 'Find if the product is worth it'),
+    help = 'App looks for best products on Reddit based on an NER model or performs sentiment analysis to find if the product or service is worth it')
 
 search_term = st.sidebar.text_input("**Enter your search term below**👇", placeholder="👉Enter here...") 
 
@@ -139,7 +143,7 @@ if button_input:
     with st_lottie_spinner(lottie_download, speed=1, height=200, key="download"):
 
         # sentiment analysis tab
-        with tab1:
+        if problem_choice == "Find if the product is worth it":
 
             # get best comments from top reddit posts
             comments, top_comments, no_of_posts, no_of_comments = util.get_comments(search_term = search_term, no_of_posts=no_of_posts, no_of_comments=no_of_comments, no_of_top_comments=no_of_top_comments, include_replies=replies_check)
@@ -242,7 +246,10 @@ if button_input:
             st.json(top_comments)
 
         # Named Entity Recognition (token-classification) tab for tagging products
-        with tab2:
+        if problem_choice == "Find best products":
+        #with tab2:
+            # get best comments from top reddit posts
+            comments, top_comments, no_of_posts, no_of_comments = util.get_comments(search_term = search_term, no_of_posts=no_of_posts, no_of_comments=no_of_comments, no_of_top_comments=no_of_top_comments, include_replies=replies_check)
 
             if len(comments)==0:
                 st.error('No comments found.')
@@ -294,8 +301,8 @@ if button_input:
 
 
 st.info("""
-        This app searches reddit posts and comments across many subreddits to determine if your search term has a positive or negative sentiment based on sentiment intensity analyzer (VADER) along with product mentions using Named Entity Recognition.
-        Text in both original posts and comments is analyzed. If the results did not give you enough information, try phrasing the search term differently and be more specific.
+        This app searches reddit posts and comments across many subreddits to determine if your search term has a positive or negative sentiment based on sentiment intensity analyzer (VADER) or find product mentions using Named Entity Recognition.
+        Text in both original posts and comments is analyzed. If the results did not give you enough information, try phrasing the search term differently and be as specific as possible.
         Feel free to increase no. of posts and no. of comments to get more breadth and depth about what redditors think😉
         """
 )
