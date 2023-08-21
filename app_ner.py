@@ -123,7 +123,7 @@ st.markdown(css, unsafe_allow_html=True)
 if button_input:
     
     # After the button is clicked, close the side bar
-    st.session_state.sidebar_state = 'collapsed' if st.session_state.sidebar_state == 'expanded' else 'expanded'
+    st.session_state.sidebar_state = 'collapsed' #if st.session_state.sidebar_state == 'expanded' else 'expanded'
 
     with st_lottie_spinner(lottie_download, speed=1, height=200, key="download"):
 
