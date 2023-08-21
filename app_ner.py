@@ -124,6 +124,8 @@ if button_input:
     
     # After the button is clicked, close the side bar
     st.session_state.sidebar_state = 'collapsed' if st.session_state.sidebar_state == 'expanded' else 'expanded'
+    # Force an app rerun after switching the sidebar state.
+    st.experimental_rerun()
     
     with st_lottie_spinner(lottie_download, speed=1, height=200, key="download"):
 
