@@ -24,8 +24,14 @@ import re
 #if 'sidebar_state' not in st.session_state:
 #    st.session_state.sidebar_state = 'expanded'
 
+# Initialize a wide layout
+if "center" not in st.session_state:
+    layout = "wide"
+else:
+    layout = "centered" if st.session_state.center else "wide"
+
 # setting a wide layout
-st.set_page_config(layout="wide", page_icon="🔥", page_title="LIT OR NOT", initial_sidebar_state="expanded")
+st.set_page_config(layout=layout, page_icon="🔥", page_title="LIT OR NOT", initial_sidebar_state="expanded")
 
 # decorator to cache model etc. allow_output_mutation for treating model as an immutable object - a singleton 
 @st.cache_resource # 👈 Add the caching decorator
@@ -106,6 +112,11 @@ button_input = st.sidebar.button("**🔥Click me to find out if its Lit🔥**", 
 
 with st.sidebar:
     st.info('For example, type "regal unlimited susbcription" or "Saatva Classic mattress reviews"🛌 or "Best 4k Tv to buy" and click the button above')
+
+# if viewing on mobile, layout changes from wide to center to avoid cutting display
+st.checkbox(
+    "Viewing on a mobile?", key="center", value=st.session_state.get("center", False)
+)
 
 # increasing font size of tabs with custom css
 css = '''
