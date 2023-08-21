@@ -75,7 +75,7 @@ st.write('Have you wondered 👀 if a product/platform/service is worth it or fo
 listTabs = ["See products mentioned by Redditors (NER, token classification) 💬","See if a product/service is worth it (Sentiment Analysis) 👍👎"]
 # create tabs
 #tab2, tab1 = st.tabs(listTabs)
-whitespace = 70
+whitespace = 0 #70
 tab2, tab1 = st.tabs([s.center(whitespace,"\u2001") for s in listTabs])
 
 # counts page views, tracks all widget interactions across users
