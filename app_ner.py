@@ -78,11 +78,12 @@ st.caption('Streamlit App by [Anudeep](https://www.linkedin.com/in/anudeepvanjav
 
 st.write('Have you wondered 👀 if a product/platform/service is worth it or found yourself going through endless reddit posts for authentic reviews and products loved by most?')
 
-listTabs = ["See products mentioned by Redditors (NER, token classification) 💬","See if a product/service is worth it (Sentiment Analysis) 👍👎"]
+# The tabs are replaced with just Radio buttons now
+#listTabs = ["See products mentioned by Redditors (NER, token classification) 💬","See if a product/service is worth it (Sentiment Analysis) 👍👎"]
 # create tabs
 #tab2, tab1 = st.tabs(listTabs)
-whitespace = 0 #70
-tab2, tab1 = st.tabs([s.center(whitespace,"\u2001") for s in listTabs])
+#whitespace = 70
+#tab2, tab1 = st.tabs([s.center(whitespace,"\u2001") for s in listTabs])
 
 # counts page views, tracks all widget interactions across users
 #streamlit_analytics.start_tracking() # add ?analytics=on at the end of the app url to see app analytics
