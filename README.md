@@ -13,7 +13,7 @@ To help you find if it's LIT or NOT on REDDIT!🔥
 
 ## App
 
-[![Streamlit App](<https://static.streamlit.io/badges/streamlit_badge_black_white.svg>)](<https://anudeepvanjavakam1-lit-or-not-on-reddit-app-ner-ivuokc.streamlit.app/>)
+[![Streamlit App](<https://static.streamlit.io/badges/streamlit_badge_black_white.svg>)](<https://litornot.streamlit.app//>)
 
 ## Project Overview
 
