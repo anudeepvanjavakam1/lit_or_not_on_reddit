@@ -110,7 +110,7 @@ button_input = st.sidebar.button("**🔥Click me to find out if its Lit🔥**", 
 
 
 with st.sidebar:
-    st.info('For example, type "regal unlimited susbcription" or "Saatva Classic mattress reviews"🛌 or "Best 4k Tv to buy" and click the button above')
+    st.info('For example, type "regal unlimited susbcription" or "are Sony WH-1000XM5 headphones worth it"🛌 or "Best 4k Tv to buy" and click the button above')
 
 # increasing font size of tabs with custom css
 css = '''
