@@ -306,4 +306,4 @@ with st.expander("Like a rhyme?", expanded=False):
     """)
 
 #  counts page views, tracks all widget interactions across users
-#streamlit_analytics.stop_tracking()        
+#streamlit_analytics.stop_tracking()
