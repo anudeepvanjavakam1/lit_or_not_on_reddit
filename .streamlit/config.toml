@@ -1,3 +1,10 @@
+# .streamlit/config.toml
+[server]
+headless = true
+enableCORS = true
+port = $PORT
+enableXsrfProtection = true
+
 [theme]
 primaryColor="#d33682"
 backgroundColor="#002b36"
