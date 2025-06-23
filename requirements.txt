@@ -5,7 +5,7 @@ en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_
 thinc==8.1.7
 
 numpy==1.23.5
-pandas==1.5.3
+pandas==3.0.0
 python-dotenv
 seaborn==0.12.2
 matplotlib==3.6.3
